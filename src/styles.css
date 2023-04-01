@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: 18px;
+}
+
+a{
+    text-decoration: none;
+    color: #272727;
+}
+
+li{
+    list-style-type: none;
+    color: #272727;
+
+}

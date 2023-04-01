@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "tag": "t-shirt",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/1.jpg",
+    "description": "T-Shirt",
+    "price": 11.99
+  },
+  {
+    "id": 2,
+    "tag": "t-shirt",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/2.jpg",
+    "description": "T-Shirt",
+    "price": 10.99
+  },
+  {
+    "id": 3,
+    "tag": "shoes",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/3.jpg",
+    "description": "T-Shirt",
+    "price": 14.99
+  },
+  {
+    "id": 4,
+    "tag": "shoes",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/4.jpg",
+    "description": "T-Shirt",
+    "price": 31.99
+  },
+  {
+    "id": 5,
+    "tag": "jeans",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/5.jpg",
+    "description": "T-Shirt",
+    "price": 55.99
+  },
+  {
+    "id": 6,
+    "tag": "jeans",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/6.jpg",
+    "description": "T-Shirt",
+    "price": 42.99
+  },
+  {
+    "id": 7,
+    "tag": "t-shirt",
+    "name": "Blue TEXTETXTETXTETXT",
+    "imageUrl": "assets/img/7.jpg",
+    "description": "T-Shirt",
+    "price": 10.99
+  }
+]

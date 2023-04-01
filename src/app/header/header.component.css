@@ -1,0 +1,26 @@
+header {
+    padding: 0;
+    border-bottom: 4px solid #272727;
+}
+
+a{
+    font-size: 2rem;
+    background-color: #f55414;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+a:hover{
+    transition: ease-out .5s;
+    color: #f55414;
+    font-weight: 700;
+    background-color: #272727;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: baseline;
+}
