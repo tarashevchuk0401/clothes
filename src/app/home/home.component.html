@@ -7,8 +7,8 @@
 <div class="wrapper" >
     <ul>
         <li *ngFor="let cloth of clothes">
-            <a routerLink="/page/{{cloth.id}}"> 
-                <img src="{{cloth.imageUrl}}" alt="clothes">
+            <a > 
+                <img routerLink="/page/{{cloth.id}}" src="{{cloth.imageUrl}}" alt="clothes">
             <div class="content">
                 <div class="name">
                     {{cloth.name}}
@@ -25,10 +25,20 @@
                     </div>
                 </div>
             </div>
+            <button (click)="addToCart(cloth.id)">Add</button>
             </a>
         </li>
     </ul>
 </div>
+
+<hr>
+
+<app-cart></app-cart>
+
+<!-- <div >{{addedItems}}</div> -->
+
+
+
 
 <!-- <div class="wrapper" *ngIf="visibleSearch">
     <ul>
