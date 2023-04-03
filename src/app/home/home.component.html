@@ -2,11 +2,12 @@
 
 <app-search></app-search>
 <app-tags></app-tags>
+<app-page></app-page>
 
 <div class="wrapper" >
     <ul>
         <li *ngFor="let cloth of clothes">
-            <a > 
+            <a routerLink="/page/{{cloth.id}}"> 
                 <img src="{{cloth.imageUrl}}" alt="clothes">
             <div class="content">
                 <div class="name">

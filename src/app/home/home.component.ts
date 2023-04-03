@@ -31,7 +31,9 @@ export class HomeComponent {
       if (params['searchTerm'])
         this.clothes = this.service.getBySearch(params['searchTerm']);
       else if (params['tag'])
-        this.clothes = this.service.getAllByTags(params['tag'])
+        this.clothes = this.service.getAllByTags(params['tag']);
+        else if(params['page'])
+        this.clothes = this.service.getById(params['page'])
       else
         this.clothes = this.service.getAll()
 

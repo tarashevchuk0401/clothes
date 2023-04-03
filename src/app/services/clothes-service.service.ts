@@ -29,6 +29,10 @@ export class ClothesServiceService {
    return this.getAll().filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
 
+  getById(num: number){
+    return this.getAll().filter(item => item.id == num)
+  }
+
 
   // getAll(){
   //  return this.http.get('assets/clothesList.json')
@@ -39,23 +43,23 @@ export class ClothesServiceService {
       {
         id: 1,
         tag: "t-shirts",
-        name: "Blue TEXTETXTETXTETXT",
+        name: "Blue Ocean",
         imageUrl: "assets/img/1.jpg",
-        description: "T-Shirt",
+        description: "T-Shirt from new collection",
         price: 11.99
       },
       {
         id: 2,
         tag: "t-shirts",
-        name: "Blue t-shirt ",
+        name: "Gray shadow ",
         imageUrl: "assets/img/2.jpg",
-        description: "T-Shirt",
+        description: "T-Shirt from new collection",
         price: 1.99
       },
       {
         id: 3,
         tag: "shoes",
-        name: "shoes",
+        name: "City Cros",
         imageUrl: "assets/img/3.jpg",
         description: "T-Shirt",
         price: 11.99
@@ -63,33 +67,33 @@ export class ClothesServiceService {
       {
         id: 4,
         tag: "shoes",
-        name: "shoes TE",
+        name: "Vintage",
         imageUrl: "assets/img/4.jpg",
-        description: "T-Shirt",
+        description: "Brown shoes  by Paolo Bettini ",
         price: 11.99
       },
       {
         id: 5,
         tag: "jeans",
-        name: "jeans",
+        name: "Regular",
         imageUrl: "assets/img/5.jpg",
-        description: "T-Shirt",
+        description: "New collection  ",
         price: 11.99
       },
       {
         id: 6,
         tag: "jeans",
-        name: "Blue TEXTETXTETXTETXT",
+        name: "Black Pants",
         imageUrl: "assets/img/6.jpg",
-        description: "T-Shirt",
+        description: "Style jeans for man",
         price: 11.99
       },
       {
         id: 7,
         tag: "t-shirts",
-        name: "Blue TEXTETXTETXTETXT",
+        name: "Green",
         imageUrl: "assets/img/7.jpg",
-        description: "T-Shirt",
+        description: "T-Shirt from new collection",
         price: 11.99
       },
 
