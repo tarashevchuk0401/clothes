@@ -1,11 +1,9 @@
 
-<div class="search_pannel">
-    <input type="text" #text placeholder="Search">
-    <button (click)="show(text.value)" >Search</button>
-    <button (click)="reset()" >Reset</button>
-</div>
 
-<div class="wrapper" *ngIf="visibleAll">
+<app-search></app-search>
+<app-tags></app-tags>
+
+<div class="wrapper" >
     <ul>
         <li *ngFor="let cloth of clothes">
             <a > 
@@ -31,7 +29,7 @@
     </ul>
 </div>
 
-<div class="wrapper" *ngIf="visibleSearch">
+<!-- <div class="wrapper" *ngIf="visibleSearch">
     <ul>
         <li *ngFor="let cloth of res">
             <a > 
@@ -56,6 +54,5 @@
         </li>
     </ul>
 </div>
-
-<div>text</div>
+ -->
 
