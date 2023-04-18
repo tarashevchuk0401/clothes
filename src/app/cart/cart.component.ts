@@ -8,14 +8,17 @@ import { SubjectService } from '../services/subject.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent  implements OnInit{
+export class CartComponent implements OnInit {
 
-  clothes: Cloth[] = [];
+  clothesInCart: Cloth[] =[];
 
-  constructor(private service: ClothesServiceService, private subjectService: SubjectService){}
+  constructor(private clothesService: ClothesServiceService) { }
 
   ngOnInit(): void {
-   this.subjectService.sub.subscribe((d:any) => this.clothes = d);
-   console.log(this.clothes)
+      this.clothesInCart = this.clothesService.getAll();
+      console.log(this.clothesInCart);
   }
+
+
 }
+

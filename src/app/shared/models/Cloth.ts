@@ -4,5 +4,6 @@ export interface Cloth{
     name:string,
     imageUrl: string,
     description:string,
-    price: number, 
+    price: number,
+    inCart: boolean, 
 }

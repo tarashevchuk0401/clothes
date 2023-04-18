@@ -20,3 +20,29 @@ li{
     color: #272727;
 
 }
+
+
+.search_pannel input {
+    background-color: #d6d4d4;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    height: 3.3rem;
+    border: 0;
+    transition: .3s;
+
+}
+
+.search_pannel button {
+    font-size: 2rem;
+    background-color: #f55414;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 0;
+    margin-left: 1rem;
+}
+
+.search_pannel button:hover {
+    transition: ease-out .5s;
+    color: #f55414;
+    background-color: #272727;
+}

@@ -15,13 +15,11 @@ export class ClothComponent implements OnInit{
   constructor(private clothesService: ClothesServiceService){}
 
   ngOnInit(): void {
-    this.clothesService.getAll().subscribe((d: any) => {
-      this.clothes = d;
-    })
+    this.clothes = this.clothesService.getAll()
+    }
 
-  
-
+    
   }
 
 
-}
+
