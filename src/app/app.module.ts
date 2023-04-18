@@ -10,8 +10,6 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { PageComponent } from './page/page.component';
-import { CartComponent } from './cart/cart.component';
-import { SubjectService } from './services/subject.service';
 
 @NgModule({
   declarations: [
@@ -20,8 +18,7 @@ import { SubjectService } from './services/subject.service';
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    PageComponent,
-    CartComponent
+    PageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +26,7 @@ import { SubjectService } from './services/subject.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [SubjectService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

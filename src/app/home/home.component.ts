@@ -3,7 +3,6 @@ import { ClothesServiceService } from '../services/clothes-service.service';
 import { Cloth } from '../shared/models/Cloth';
 import { ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
-import { SubjectService } from '../services/subject.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +12,6 @@ import { SubjectService } from '../services/subject.service';
 export class HomeComponent {
 
   clothes: Cloth[] = [];
-  addedClothes : Cloth[] = [];
-  addedItems:number = 0 ;
 
   // visibleAll: boolean = true;
   // visibleSearch: boolean = false;
@@ -22,7 +19,7 @@ export class HomeComponent {
   // res: Cloth[] = [];
 
   constructor(private service: ClothesServiceService,
-    private route: ActivatedRoute, private subjectService: SubjectService) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     //  this.route.params.subscribe(params => {
@@ -41,22 +38,10 @@ export class HomeComponent {
         this.clothes = this.service.getAll()
 
     })
-  }
 
-  addToCart(id: number){
 
-    this.clothes[id].addedToCart = true;
-    this.addedClothes.push(this.clothes[id]);
-    console.log(this.addedClothes);
-    console.log(this.clothes[id].addedToCart);
 
   }
-
-  sendToCart(){
-    this.subjectService.send(this.addedClothes);
-  }
-
-
 
 
 
