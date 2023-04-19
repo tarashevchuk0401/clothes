@@ -83,7 +83,7 @@ export class ClothesServiceService {
         imageUrl: "assets/img/5.jpg",
         description: "New collection  ",
         price: 11.99,
-        inCart: false,
+        inCart: true,
       },
       {
         id: 6,
@@ -92,7 +92,7 @@ export class ClothesServiceService {
         imageUrl: "assets/img/6.jpg",
         description: "Style jeans for man",
         price: 11.99,
-        inCart: false,
+        inCart: true,
       },
       {
         id: 7,

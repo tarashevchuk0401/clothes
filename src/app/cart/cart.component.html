@@ -1,18 +1,26 @@
-<ul class="wrapper">
-    <li *ngFor="let cloth of clothesInCart" class="cart">
-        <a routerLink="/page/{{cloth.id}}">
-            <img src="{{cloth.imageUrl}}" alt="clothes">
-            <div class="content">
-                <div class="name">
-                    {{cloth.name}}
+
+
+<main>
+    <ul class="wrapper">
+        <li *ngFor="let cloth of clothesInCart" class="cart">
+            <a routerLink="/page/{{cloth.id}}">
+                <img src="{{cloth.imageUrl}}" alt="clothes">
+                <div class="content">
+                    <div class="name">
+                        {{cloth.name}}
+                    </div>
+                    <div class="description">
+                        {{cloth.description}}
+                    </div>
+                    <div class="price">
+                        {{cloth.price | currency}}
+                    </div>
                 </div>
-                <div class="description">
-                    {{cloth.description}}
-                </div>
-                <div class="price">
-                    {{cloth.price | currency}}
-                </div>
-            </div>
-        </a>
-    </li>
-</ul>
+            </a>
+        </li>
+    </ul>
+    <div class="total">
+        TOTAL
+    </div>
+
+</main>
