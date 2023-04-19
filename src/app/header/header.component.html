@@ -1,6 +1,9 @@
 <header>
     <div class="container">
         <button routerLink="home" class="logo">Clothes </button>
-        <button routerLink="cart">Cart</button>
+        <div>
+            <button routerLink="cart">Cart</button>
+            <button routerLink="login" (click)="logout()">Log Out</button>
+        </div>
     </div>
 </header>

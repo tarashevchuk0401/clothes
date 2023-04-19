@@ -13,6 +13,7 @@ import { PageComponent } from './page/page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { CartComponent } from './cart/cart.component';
+import { ResolverService } from './services/resolver.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { CartComponent } from './cart/cart.component';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService , ResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
