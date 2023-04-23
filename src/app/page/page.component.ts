@@ -19,13 +19,13 @@ export class PageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroyed$)).subscribe((params) => {
       if (params['id'])
-        this.clothes = this.service.getById(params['id'])
+        this.clothes = this.service.getById(params['id']);
     })
   }
 
   ngOnDestroy(): void {
     this.destroyed$.next();
-    this.destroyed$.complete()
+    this.destroyed$.complete();
   }
 
 }
