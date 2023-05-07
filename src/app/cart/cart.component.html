@@ -1,29 +1,42 @@
-
-
 <main>
     <ul class="wrapper">
-        <li *ngFor="let cloth of clothesInCart" class="cart">
+        <li class="" *ngFor="let cloth of clothesInCart" class="cart">
             <a routerLink="/page/{{cloth.id}}">
                 <img *ngIf="cloth.imageNumber" src="assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
             </a>
-                <div class="content">
-                    <div class="name">
-                        {{cloth.name}}
-                    </div>
-                    <div class="description">
-                        {{cloth.description}}
-                    </div>
-                    <div class="price">
-                        {{cloth.price | currency}}
-                    </div>
-                    <div>{{cloth.quantityInCart}}</div>
-                    <button (click)="removeFromCart(cloth.id)">Remove</button>
+            <div class="content">
+                <div class="name">
+                    {{cloth.name}}
                 </div>
-          
+                <div class="description">
+                    {{cloth.description}}
+                </div>
+                <div class="price_quantity">
+                    <div>Quantity: {{cloth.quantityInCart}}</div>
+                    <div class="price">
+                        Price {{cloth.price | currency}}
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="remove" (click)="removeFromCart(cloth.id)">
+                        <img class="icon" src="assets/icons/delete.png" alt="">
+                    </button>
+                </div>
+            </div>
         </li>
     </ul>
     <div class="total">
-        TOTAL
+        <ul *ngFor="let cloth of clothesInCart">
+            <div class="calculation">
+                <div class="text">
+                    <div class="calculation_name">{{cloth.name}}</div>
+                    <div class="calculation_tag" >{{cloth.tag}}</div>
+                    <div class="quantity">  {{cloth.quantityInCart}} pcs</div>
+                </div>
+                <div class="calculation_price">{{cloth.price * cloth.quantityInCart | currency}}</div>
+            </div>
+        </ul>
+        <p>Total = <span class="totalPrice"> {{totalPrice | currency}}</span></p>
     </div>
 
 </main>

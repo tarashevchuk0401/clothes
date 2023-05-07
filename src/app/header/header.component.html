@@ -1,10 +1,17 @@
-<header>
-    <div class="container">
-        <button routerLink="home" class="logo">Clothes </button>
-        <div>
-            <button routerLink="cart">Cart</button>
-            <button routerLink="login" (click)="logout()">Log Out</button>
-        </div>
+<div class="container">
+    <button routerLink="home" class="logo">Clothes </button>
+    <div>
+        <button routerLink="cart">
+            <img src="assets/icons/cart.png" alt="">
+            Cart
+        </button>
+        <button routerLink="login" (click)="logout()">
+            <img src="assets/icons/logout.png" alt="">
+            Log Out
+        </button>
+        <button routerLink="/adding-clothes">
+            <img src="assets/icons/add.png" alt="">
+            Add new item
+        </button>
     </div>
-    <button routerLink="/adding-clothes">Adding Clothes</button>
-</header>
+</div>

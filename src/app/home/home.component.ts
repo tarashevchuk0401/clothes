@@ -8,7 +8,7 @@ import { ServerService } from '../services/server.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 
@@ -20,6 +20,10 @@ export class HomeComponent {
     private route: ActivatedRoute, private server: ServerService) { }
 
   ngOnInit() {
+    this.getAllItems();
+  }
+
+  getAllItems(){
     this.server.getAllItems().subscribe(d => this.clothes = d)
   }
 

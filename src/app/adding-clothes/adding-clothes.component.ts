@@ -6,7 +6,7 @@ import { Cloth } from '../shared/models/Cloth';
 @Component({
   selector: 'app-adding-clothes',
   templateUrl: './adding-clothes.component.html',
-  styleUrls: ['./adding-clothes.component.css']
+  styleUrls: ['./adding-clothes.component.scss']
 })
 export class AddingClothesComponent implements OnInit {
 

@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+$color_A1 : #f55414;
+$color_B1 : #171717;
+$color_B2 : #5f5f5f;
+$color_C1 : #d6d4d4;
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: $color_B1;
+    &:hover{
+        color: $color_B2;
+    }
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    margin: 0;
+    list-style-type: none;
+    color: $color_B1;
+    &:hover{
+        transition: ease-in-out .3s;
+        outline:  $color_A1 solid 4px;
+        outline-offset: 10px;
+        border-radius: 1rem;
+        transform: translateY(-5px); 
+    }
+}
+
+
+.search_pannel input {
+    background-color: $color_C1;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    height: 3.3rem;
+    border: 0;
+    transition: .3s;
+}
+
+button{
+    color: $color_B1;
+    background-color: $color_A1;
+    border-radius: .8rem;
+    font-size: 2rem;
+    padding: .5rem;
+    border: none;
+    margin: .8rem;
+
+    &:hover{
+        transition: all .2s;
+        outline:  #272727 solid 4px;
+        outline-offset: 5px;
+        // color: $color_A1;
+        // background-color: $color_B1;
+
+    }
+}
+
+@media (max-width: 600px) {
+    button{
+        font-size: 1.3rem;
+        padding: .2rem;
+        margin: .4rem;
+        border-radius: .4rem;
+        &:hover {
+            outline:  #272727 solid 2px;
+            outline-offset: 2px;
+            transition: all 0s;
+        }
+
+    }
+    
+}

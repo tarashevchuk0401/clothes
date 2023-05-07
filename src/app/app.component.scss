@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header {
+    width: 100%;
+}
+
+.container_app {
+    width: 93%;
+}
+
+@media (max-width: 600px) {
+    .container_app {
+        width: 95%;
+    }
+}
