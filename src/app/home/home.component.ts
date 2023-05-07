@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { ClothesServiceService } from '../services/clothes-service.service';
 import { Cloth } from '../shared/models/Cloth';
 import { ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, map, toArray } from 'rxjs';
+import { ServerService } from '../services/server.service';
 
 @Component({
   selector: 'app-home',
@@ -12,65 +13,40 @@ import { filter } from 'rxjs';
 export class HomeComponent {
 
   clothes: Cloth[] = [];
-
-  // visibleAll: boolean = true;
-  // visibleSearch: boolean = false;
-
-  // res: Cloth[] = [];
+  MySearchTerm: string = '';
+  quantityToCatr: number = 0;
 
   constructor(private service: ClothesServiceService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private server: ServerService) { }
 
   ngOnInit() {
-    //  this.route.params.subscribe(params => {
-    //   if(params['searchTerm']) 
-    //   this.clothes = this.service.getAll()
-    //  })
-
-    this.route.params.subscribe(params => {
-      if (params['searchTerm'])
-        this.clothes = this.service.getBySearch(params['searchTerm']);
-      else if (params['tag'])
-        this.clothes = this.service.getAllByTags(params['tag']);
-        else if(params['page'])
-        this.clothes = this.service.getById(params['page'])
-      else
-        this.clothes = this.service.getAll()
-
-    })
-
-    
-
-
+    this.server.getAllItems().subscribe(d => this.clothes = d)
   }
 
+  search() {
+    this.server.getAllItems().pipe(
+      map(item => item.filter(i => {
+        if (i.name.includes(this.MySearchTerm) || i.tag.includes(this.MySearchTerm) || i.description.includes(this.MySearchTerm)) {
+          return i;
+        }
+      }))
+    ).subscribe(d => this.clothes = d)
+  }
 
+  searchByTag(tag: string){
+    this.server.getAllItems().pipe(
+      map(item => item.filter(i => {
+        if (i.tag === tag) {
+          return i;
+        }
+      }))
+    ).subscribe(d => this.clothes = d)
+  }
 
-  // ngOnInit() {
-
-  //   this.service.getAll().subscribe((d: any) => {
-  //     this.clothes = d;
-  //   })
-
-  // }
-
-
-  // show(text: any) {
-  //   this.res = [];
-  //   this.clothes.filter(item => {
-  //     if (item.tag.includes(text.toLowerCase()) || (item.name.includes(text.toLowerCase())))
-  //       this.res.push(item)
-  //   });
-  //   this.visibleAll = false;
-  //   this.visibleSearch = true;
-  // }
-
-  //   reset(){
-  //     this.visibleAll = true;
-  //     this.visibleSearch = false;
-  //   }
-
-
+  addToCart(id: string, newQuantity: string){
+    this.server.changeQuantityInCart(id, +newQuantity).subscribe( d => console.log(d))
+  }
 
 }
+
 

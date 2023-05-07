@@ -1,14 +1,20 @@
-
-
-<app-search></app-search>
-<app-tags></app-tags>
+<!-- <app-tags></app-tags> -->
 <app-page></app-page>
 
-<div class="wrapper" >
+<div class="search_pannel">
+    <input type="text" placeholder="Search" [(ngModel)]="MySearchTerm">
+    <button (click)="search()">Search</button>
+</div>
+
+<button (click)="searchByTag('shoes')">Shoes</button>
+<button (click)="searchByTag('t-shirt')">t-shirt</button>
+
+<div class="wrapper">
     <ul>
         <li *ngFor="let cloth of clothes">
-            <a routerLink="/page/{{cloth.id}}"> 
-                <img src="{{cloth.imageUrl}}" alt="clothes">
+            <a routerLink="/page/{{cloth.id}}">
+                <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+            </a>
             <div class="content">
                 <div class="name">
                     {{cloth.name}}
@@ -23,9 +29,12 @@
                     <div class="price">
                         {{cloth.price | currency}}
                     </div>
+                    <div>{{cloth.id}}</div>
                 </div>
+                <input type="number"  #newQuantity>
+                <button (click)="addToCart(cloth.id, newQuantity.value)">addToCart</button>
             </div>
-            </a>
+
         </li>
     </ul>
 </div>
@@ -56,4 +65,3 @@
     </ul>
 </div>
  -->
-

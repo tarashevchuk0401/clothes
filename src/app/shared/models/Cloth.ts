@@ -1,9 +1,10 @@
 export interface Cloth{
-    id:number,
+    id?: string,
     tag: string,
     name:string,
-    imageUrl: string,
+    imageNumber?: number,
     description:string,
     price: number,
     inCart: boolean, 
+    quantityInCart?: number,
 }

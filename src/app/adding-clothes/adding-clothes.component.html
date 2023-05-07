@@ -1,0 +1,55 @@
+<form #addingClothe="ngForm">
+    <div>
+        <label>Tag</label>
+        <input type="text" ngModel name="tag" required #tag="ngModel">
+    </div>
+    <div>
+        <label>name</label>
+        <input type="text" ngModel name="name" required #name="ngModel">
+    </div>
+    <div>
+        <label>description</label>
+        <input type="text" ngModel name="description" required #description="ngModel">
+    </div>
+    <div>
+        <label>price</label>
+        <input type="number" ngModel name="price" required #price="ngModel">
+    </div>
+    <div>
+        <label>Image number</label>
+        <input type="number" ngModel name="imageNumber" #imageNumber="ngModel">
+    </div>
+    <div>
+        <label>quantityInCart</label>
+        <input type="number" ngModel name="quantityInCart" required #quantityInCart="ngModel">
+    </div>
+    <button (click)="onFormSubmit(addingClothe)">SUBMIT</button>
+</form>
+
+
+<div class="wrapper">
+    <ul>
+        <li *ngFor="let cloth of clothes">
+
+            <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+            <div>id :{{cloth.id}}</div>
+            <div class="content">
+                <div class="name">
+                    {{cloth.name}}
+                </div>
+                <div class="description">
+                    {{cloth.description}}
+                </div>
+                <div class="footer">
+                    <div class="tag">
+                        {{cloth.tag}}
+                    </div>
+                    <div class="price">
+                        {{cloth.price | currency}}
+                    </div>
+                </div>
+            </div>
+            <button (click)="deleteItem(cloth.id)">Delete</button>
+        </li>
+    </ul>
+</div>
