@@ -13,6 +13,12 @@ img{
     width: 30px;
 }
 
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 
 @media (max-width: 600px){
     .container{

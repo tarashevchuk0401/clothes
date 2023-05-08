@@ -10,8 +10,12 @@ img {
 .search_pannel {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
+
+
 
 .wrapper {
     display: flex;
@@ -46,8 +50,7 @@ img {
             flex-shrink: 1;
             flex-grow: 1;
             @media (max-width: 600px) {
-                margin: 0.1rem;
-                // width: 13rem ;
+                margin: 1rem;
             }
 
 
@@ -122,6 +125,12 @@ img {
     }
     li{
         margin: 0;
+        padding: 0;
+    }
+
+    input{
+        height: 2rem;
+        padding: .5rem;
     }
 }
 

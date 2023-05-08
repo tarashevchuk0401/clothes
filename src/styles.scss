@@ -6,41 +6,43 @@ $color_B1 : #171717;
 $color_B2 : #5f5f5f;
 $color_C1 : #d6d4d4;
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: $color_B1;
-    &:hover{
+
+    &:hover {
         color: $color_B2;
     }
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
 
-li{
+li {
     margin: 0;
     list-style-type: none;
     color: $color_B1;
-    outline:  $color_B1 solid 4px;
-        outline-offset: 10px;
-        border-radius: 1rem;
-    &:hover{
+    outline: $color_B1 solid 4px;
+    outline-offset: 10px;
+    border-radius: 1rem;
+
+    &:hover {
         transition: ease-in-out .3s;
-        outline:  $color_A1 solid 4px;
+        outline: $color_A1 solid 4px;
         outline-offset: 10px;
         border-radius: 1rem;
-        transform: translateY(-5px); 
+        transform: translateY(-5px);
     }
 }
 
@@ -54,7 +56,7 @@ li{
     transition: .3s;
 }
 
-button{
+button {
     color: $color_B1;
     background-color: $color_A1;
     border-radius: .8rem;
@@ -62,29 +64,29 @@ button{
     padding: .5rem;
     border: none;
     margin: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:hover{
+    &:hover {
         transition: all .2s;
-        outline:  #272727 solid 4px;
+        outline: #272727 solid 4px;
         outline-offset: 5px;
-        // color: $color_A1;
-        // background-color: $color_B1;
-
     }
 }
 
 @media (max-width: 600px) {
-    button{
-        font-size: 1.3rem;
+    button {
+        font-size: 1rem;
         padding: .2rem;
-        margin: .4rem;
+        margin: .2rem;
         border-radius: .4rem;
+
         &:hover {
-            outline:  #272727 solid 2px;
+            outline: #272727 solid 2px;
             outline-offset: 2px;
             transition: all 0s;
         }
-
     }
-    
+
 }

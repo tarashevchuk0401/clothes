@@ -23,21 +23,26 @@ export class HomeComponent {
     this.getAllItems();
   }
 
-  getAllItems(){
+  getAllItems() {
     this.server.getAllItems().subscribe(d => this.clothes = d)
   }
 
   search() {
     this.server.getAllItems().pipe(
       map(item => item.filter(i => {
-        if (i.name.includes(this.MySearchTerm) || i.tag.includes(this.MySearchTerm) || i.description.includes(this.MySearchTerm)) {
+        if ((i.name.toUpperCase()).includes(this.MySearchTerm.toUpperCase())
+          || (i.tag.toUpperCase()).includes(this.MySearchTerm.toUpperCase())
+          || (i.description.toUpperCase()).includes(this.MySearchTerm.toUpperCase())) {
           return i;
         }
       }))
-    ).subscribe(d => this.clothes = d)
+    ).subscribe(d => {
+      console.log(this.MySearchTerm)
+      this.clothes = d
+    })
   }
 
-  searchByTag(tag: string){
+  searchByTag(tag: string) {
     this.server.getAllItems().pipe(
       map(item => item.filter(i => {
         if (i.tag === tag) {
@@ -47,8 +52,8 @@ export class HomeComponent {
     ).subscribe(d => this.clothes = d)
   }
 
-  addToCart(id: string, newQuantity: string){
-    this.server.changeQuantityInCart(id, +newQuantity).subscribe( d => console.log(d))
+  addToCart(id: string, newQuantity: string) {
+    this.server.changeQuantityInCart(id, +newQuantity).subscribe(d => console.log(d))
   }
 
 }
