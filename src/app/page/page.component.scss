@@ -1,32 +1,100 @@
-a {
+main {
+    margin: 2rem;
+}
+
+.container {
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
+    outline: #f55414 solid 4px;
+    outline-offset: 10px;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 img {
-    width: 30rem;
+    width: 17rem;
     max-height: 70vh;
     object-fit: contain;
 }
 
-.content{
+.content {
     margin-left: 3rem;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
 .content div {
     margin-top: 2rem;
 }
 
-.name{
-    font-size: 4rem;
+.name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
 }
 
-.description{
-    font-size: 2rem;
+.description {
+    font-size: 1.5rem;
 }
 
 .price {
     font-size: 3rem;
     color: #f55414;
+}
+
+.input_add {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.quantity {
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 4rem;
+    height: 2rem;
+    border: 3px solid black;
+}
+
+.add_to_cart {}
+
+.button_tag {}
+
+.icon {
+    width: 2rem;
+}
+
+@media (max-width: 600px){
+    img{
+        width: 7rem;
+    }
+
+    .container{
+        padding: 0.1rem;
+        margin: 0.1rem;
+        outline-offset: .2rem;
+    }
+
+    .content{
+        margin: 0.2rem;
+    }
+
+    .name{
+        font-size: 2rem;
+    } 
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .price{
+        font-size: 1.2rem;
+    }
+
+    .icon{
+        width: 1rem;
+    }
+
+    
 }

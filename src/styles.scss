@@ -32,6 +32,9 @@ li{
     margin: 0;
     list-style-type: none;
     color: $color_B1;
+    outline:  $color_B1 solid 4px;
+        outline-offset: 10px;
+        border-radius: 1rem;
     &:hover{
         transition: ease-in-out .3s;
         outline:  $color_A1 solid 4px;

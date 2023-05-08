@@ -29,7 +29,8 @@ import { AddingClothesComponent } from './adding-clothes/adding-clothes.componen
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [AuthService, ResolverService],
   bootstrap: [AppComponent]

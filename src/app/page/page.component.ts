@@ -15,12 +15,17 @@ export class PageComponent implements OnInit {
   currentId: string = this.route.snapshot.params['id']
   currentItem: Cloth[] = [];
 
-  constructor(private server : ServerService, private route: ActivatedRoute) { }
+  constructor(private server: ServerService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-  this.server.getAllItems().pipe(
-    map(item => item.filter(i => i.id == this.currentId))
-  ).subscribe( data => this.currentItem = data)
+    this.server.getAllItems().pipe(
+      map(item => item.filter(i => i.id == this.currentId))
+    ).subscribe(data => this.currentItem = data)
+  }
+
+  
+  addToCart(id: string, newQuantity: string){
+    this.server.changeQuantityInCart(id, +newQuantity).subscribe( d => console.log(d))
   }
 
 }

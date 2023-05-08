@@ -11,32 +11,46 @@ import { Cloth } from '../shared/models/Cloth';
 export class AddingClothesComponent implements OnInit {
 
   clothes: Cloth[] = [];
+  description: string = '';
+  imageNumber: string = '';
+  formValidation: boolean = false;
+  showError: boolean = false;
 
-  constructor(private server: ServerService){}
+  constructor(private server: ServerService) { }
 
   ngOnInit(): void {
+    this.getAllItems();
+  }
+
+  getAllItems() {
     this.server.getAllItems().subscribe(d => {
       this.clothes = d;
-      console.log(this.clothes)
     });
-   
+
   }
 
-  onFormSubmit(addingCloth: NgForm){
+  onFormSubmit(addingCloth: NgForm) {
     let newItem: Cloth = {
       tag: addingCloth.value.tag,
-      name:addingCloth.value.name,
-      description: addingCloth.value.description,
+      name: addingCloth.value.name,
+      description: this.description,
       price: addingCloth.value.price,
-      inCart: false, 
+      inCart: false,
       quantityInCart: 0,
-      imageNumber: addingCloth.value.imageNumber, 
+      imageNumber: +this.imageNumber,
     }
 
-    this.server.addItem(newItem).subscribe()
+    if (addingCloth.form.status === 'VALID') {
+      this.server.addItem(newItem).subscribe(data => {
+        this.getAllItems();
+        addingCloth.reset();
+      });
+
+    }
+    else this.showError = true;
   }
 
-  deleteItem(id: string){
-    this.server.deleteItem(id).subscribe()
+  deleteItem(id: string) {
+    this.server.deleteItem(id).subscribe(d => this.getAllItems())
   }
 }

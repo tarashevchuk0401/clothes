@@ -28,7 +28,7 @@
                 <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
             </a>
             <div class="content">
-                <a class="name">
+                <a routerLink="/page/{{cloth.id}}" class="name">
                     {{cloth.name}}
                 </a>
                 <div class="description">
@@ -38,7 +38,7 @@
                     {{cloth.price | currency}}
                 </div>
                 <div class="input_add">
-                    <input class="quantity" type="number" #newQuantity value="1">
+                    <input min="0" oninput="validity.valid||(value='')" class="quantity" type="number" #newQuantity value="1">
                     <button class="add_to_cart button_tag" (click)="addToCart(cloth.id, newQuantity.value)">
                         Add <img  class="icon" src="assets/icons/cart.png" alt="">
                     </button> 
