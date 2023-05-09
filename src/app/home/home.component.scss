@@ -15,6 +15,21 @@ img {
     margin-bottom: .5rem;
 }
 
+.photo_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #f9c38e;
+    margin-bottom: 2rem;
+    padding: 0rem;
+    border-radius: 1rem;
+
+    img {
+        object-fit: contain;
+    }
+
+}
+
 
 
 .wrapper {
@@ -43,12 +58,14 @@ img {
 
         li {
             display: flex;
+            flex-direction: row;
             justify-content: center;
             overflow: hidden;
             margin: 1rem;
             max-width: 29rem;
             flex-shrink: 1;
             flex-grow: 1;
+
             @media (max-width: 600px) {
                 margin: 1rem;
             }
@@ -123,12 +140,13 @@ img {
     img {
         width: 150px;
     }
-    li{
+
+    li {
         margin: 0;
         padding: 0;
     }
 
-    input{
+    input {
         height: 2rem;
         padding: .5rem;
     }

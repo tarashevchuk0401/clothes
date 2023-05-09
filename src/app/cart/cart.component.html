@@ -1,19 +1,19 @@
 <main>
     <ul class="wrapper">
-        <li class="" *ngFor="let cloth of clothesInCart" class="cart">
+        <li class="li_cart" *ngFor="let cloth of clothesInCart" class="cart">
             <a routerLink="/page/{{cloth.id}}">
                 <img *ngIf="cloth.imageNumber" src="assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
             </a>
             <div class="content">
-                <div class="name">
+                <h1 class="name">
                     {{cloth.name}}
-                </div>
+                </h1>
                 <div class="description">
                     {{cloth.description}}
                 </div>
                 <div class="price_quantity">
                     <div>Quantity: {{cloth.quantityInCart}}</div>
-                    <div class="price">
+                    <div class=" price_quantity price">
                         Price {{cloth.price | currency}}
                     </div>
                 </div>
@@ -26,17 +26,16 @@
         </li>
     </ul>
     <div class="total">
-        <ul *ngFor="let cloth of clothesInCart">
+        <ul class="total_items" *ngFor="let cloth of clothesInCart">
             <div class="calculation">
                 <div class="text">
-                    <div class="calculation_name">{{cloth.name}}</div>
+                    <h3 class="calculation_name">{{cloth.name}}</h3>
                     <div class="calculation_tag" >{{cloth.tag}}</div>
                     <div class="quantity">  {{cloth.quantityInCart}} pcs</div>
                 </div>
                 <div class="calculation_price">{{cloth.price * cloth.quantityInCart | currency}}</div>
             </div>
         </ul>
-        <p>Total = <span class="totalPrice"> {{totalPrice | currency}}</span></p>
+        <p class="totalPrice">Total =  <span > {{totalPrice | currency}}</span></p>
     </div>
-
 </main>

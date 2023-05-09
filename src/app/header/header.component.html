@@ -1,15 +1,15 @@
 <div class="container">
-    <button routerLink="home" class="logo">Clothes </button>
+    <button routerLink="home" routerLinkActive="active_link" class="logo">Clothes </button>
     <nav>
-        <button routerLink="cart">
+        <button routerLink="cart" routerLinkActive="active_link">
             <img src="assets/icons/cart.png" alt="">
             Cart
         </button>
-        <button routerLink="login" (click)="logout()">
+        <button routerLink="login" routerLinkActive="active_link" (click)="logout()">
             <img src="assets/icons/logout.png" alt="">
             Log Out
         </button>
-        <button routerLink="/adding-clothes">
+        <button routerLink="/adding-clothes" routerLinkActive="active_link">
             <img src="assets/icons/add.png" alt="">
             Add new item
         </button>

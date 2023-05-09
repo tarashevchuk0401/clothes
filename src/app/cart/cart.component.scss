@@ -1,232 +1,161 @@
+
 $color_A1 : #f55414;
 $color_B1 : #171717;
 $color_B2 : #5f5f5f;
 $color_C1 : #d6d4d4;
 
+$pomegranate-50: #fff5ed;
+$pomegranate-200: #fdcdab;
+$pomegranate-300: #fba976;
+$pomegranate-100: #fee8d6;
+$pomegranate-400: #f87b3f;
+$pomegranate-500: #f55414;
+$pomegranate-600: #e63e10;
+$pomegranate-700: #bf2c0f;
+$pomegranate-800: #982414;
+$pomegranate-900: #7a2114;
+$pomegranate-950: #420e08;
+
+
+img {
+    width: 10rem;
+    margin: 0 .5rem;
+}
+
 main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-shrink: 1;
-    // align-items: ;
+    flex-grow: 0;
 }
 
+li {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 80%;
+    margin: 2rem;
+}
 
-.wrapper {
+.content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex-shrink: 1;
     flex-grow: 1;
-    align-items: flex-start;
-
-
-    li {
-        display: flex;
-        flex-direction: row;
-        
-
-        margin-top: 1.3rem;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        width: 90%;
-
-        @media(max-width:600px) {
-            width: 96%;
-            margin: .6rem;
-            // outline-offset: 1px;
-
-        }
-
-        img {
-            max-width: 150px;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            flex-shrink: 1;
-            margin: 0.5rem;
-
-            .name {
-                font-weight: 700;
-                font-size: 2.5rem;
-                text-align: center;
-                text-transform: uppercase;
-                margin: 0.5rem;
-                margin-top: 1rem;
-
-                @media (max-width: 600px) {
-                    
-                }
-            }
-
-            .description{
-                font-size: 2rem;
-            }
-
-            .price {
-                margin-top: 2rem;
-                font-size: 1.5rem;
-                color: #f55414;
-
-                @media (max-width: 600px) {
-                    margin: .2rem;
-
-                }
-            }
-
-            .button {
-
-                display: flex;
-                justify-content: flex-end;
-
-                .remove_button {
-                    flex-shrink: 1;
-                    width: 4rem;
-                    height: 3rem;
-                }
-            }
-
-
-            .price_quantity {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: baseline;
-                font-weight: 900;
-
-            }
-
-            .icon {
-                width: 20px;
-            }
-        }
-
-    }
+    justify-content: space-between;
 }
 
+.name {
+    font-weight: 900;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.price_quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+
+}
+
+.price {
+    color: $color_A1;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    width: 2rem;
+}
 
 .total {
-    border: 2px solid black;
-    height: 500px;
-    margin: .5rem;
-    max-width: 30rem;
-    flex-grow: 1;
-    border-radius: 1rem;
-
-    @media (max-width: 600px) {
-        margin: 0.1rem;
-
-    }
-
-
-}
-
-ul {
     display: flex;
     flex-direction: column;
-
-    margin: .5rem;
-
-    .calculation {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.5rem;
-        padding: 0.1rem;
-
-        @media (max-width: 600px) {
-            font-size: 1rem;
-            flex-direction: column;
-        }
-
-        .calculation_name {
-            font-weight: 900;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-
-            @media (max-width: 600px) {
-                font-size: .7rem;
-            }
-        }
-
-        .calculation_tag {
-            text-transform: capitalize;
-            font-size: .8rem;
-        }
-
-        .quantity {
-            font-size: 1rem;
-            color: #f55414;
-        }
-
-        .calculation_price {
-            font-size: 1.2rem;
-            color: #f55414;
-
-            @media (max-width: 600px) {
-                font-size: .9rem;
-
-            }
-        }
-    }
+    flex-grow: 1;
+    width: 50rem;
 }
 
-p {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2rem;
+.calculation {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    outline: $color_A1 solid 4px;
+    outline-offset: 5px;
+    border-radius: 1rem;
+    margin-top: 1.7rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h3 {
+    margin: 0;
+}
+
+.calculation_tag {
+    font-weight: 700;
+}
+
+.price_quantity {
     font-weight: 900;
-
-    span {
-        color: #f55414;
-
-    }
-
-    @media (max-width: 600px) {
-        font-size: 1rem;
-
-    }
 }
 
+.calculation_price {
+    color: $pomegranate-500;
+    font-weight: 800;
+}
 
+.totalPrice {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: $pomegranate-600;
+}
 
-
-
-
-
-
-
-@media (max-width: 600px) {
-    .icon {
-        width: 20px;
-    }
-
-
+@media (max-width: 700px) {
     img {
-        width: 90px;
+        width: 7rem;
+    }
+    main{
+        flex-direction: column-reverse;
     }
 
-    .remove {
-        width: 2rem;
-        height: 2rem;
-        margin: 0.1rem;
-        padding: 0.1rem;
+    .wrapper {
+        padding: .2rem;
+        margin: 0;
     }
 
-    .calculation {
+    li {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding: .2rem; 
+    }
+
+    h1 {
         font-size: 1rem;
     }
 
+    .price_quantity{
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: .7rem;
+    }
+
+    .total{
+        width: 95%;
+        margin: .8rem;
+    }
+
 }
-
-@media (max-width) {}
-
-// @media (max-width: 400px) {
-//     img{
-//         width: 100px;
-//     }
-// }

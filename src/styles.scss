@@ -6,8 +6,25 @@ $color_B1 : #171717;
 $color_B2 : #5f5f5f;
 $color_C1 : #d6d4d4;
 
+$pomegranate-50: #fff5ed;
+$pomegranate-200: #fdcdab;
+$pomegranate-300: #fba976;
+$pomegranate-100: #fee8d6;
+$pomegranate-400: #f87b3f;
+$pomegranate-500: #f55414;
+$pomegranate-600: #e63e10;
+$pomegranate-700: #bf2c0f;
+$pomegranate-800: #982414;
+$pomegranate-900: #7a2114;
+$pomegranate-950: #420e08;
+
+
+
+
 * {
     box-sizing: border-box;
+    font-variant: normal;
+
 }
 
 body {
@@ -58,7 +75,7 @@ li {
 
 button {
     color: $color_B1;
-    background-color: $color_A1;
+    background-color: $pomegranate-500;
     border-radius: .8rem;
     font-size: 2rem;
     padding: .5rem;
@@ -73,6 +90,14 @@ button {
         outline: #272727 solid 4px;
         outline-offset: 5px;
     }
+}
+
+.active_link{
+    background-color: $pomegranate-700;
+    outline: #272727 solid 4px;
+    outline-offset: 5px;
+
+
 }
 
 @media (max-width: 600px) {
