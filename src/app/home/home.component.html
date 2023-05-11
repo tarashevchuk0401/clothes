@@ -1,31 +1,28 @@
 <div class="search_pannel">
     <input type="text" placeholder="Search" [(ngModel)]="MySearchTerm">
-    <button (click)="search()">Search</button>
+    <button class="button_search" (click)="search()">Search</button>
 </div>
 <div class="photo_container">
-    <img src="assets/img/girl.jpg" alt="fasion girl">
+    <img src="assets/img/girl.avif" alt="fasion girl">
     <div class="text_photo">
-        <h3>New Colection</h3>
-        <p>Find something special in this summer !</p>
+        <h1>NEW COLLECTION</h1>
     </div>
 </div>
 <div class="wrapper">
     <div class="sidebar">
-        <button class="button_tag" (click)="getAllItems()">all
+        <button [ngClass]="{'active_link' : activeTag === 'all'}" class="button_tag" (click)="getAllItems()">
+            <img class="icon" src="assets/icons/infinity.png" alt="">
          </button>
-        <button class="button_tag" (click)="searchByTag('shoes')">
+        <button [ngClass]="{'active_link' : activeTag === 'shoes'}" class="button_tag" (click)="searchByTag('shoes')">
             <img class="icon " src="assets/icons/shoes.png" alt="">
          </button>
-        <button class="button_tag" (click)="searchByTag('pant')">
-            <img class="icon" src="assets/icons/pant.png" alt="">
+        <button [ngClass]="{'active_link' : activeTag === 'jeans'}" class="button_tag" (click)="searchByTag('jeans')">
+            <img class="icon" src="assets/icons/jeans.png" alt="">
          </button>
-        <button class="button_tag" (click)="searchByTag('t-shirt')">
+        <button [ngClass]="{'active_link' : activeTag === 't-shirt'}" class="button_tag" (click)="searchByTag('t-shirt')">
             <img class="icon" src="assets/icons/t-shirt.png" alt="">
          </button>
-        <button class="button_tag" (click)="searchByTag('dress')">
-            <img class="icon" src="assets/icons/dress.png" alt="">
-         </button>
-        <button class="button_tag" (click)="searchByTag('jumper')">
+        <button [ngClass]="{'active_link' : activeTag === 'jumper'}" class="button_tag" (click)="searchByTag('jumper')">
             <img class="icon" src="assets/icons/jumper.png" alt="">
          </button>
     </div>

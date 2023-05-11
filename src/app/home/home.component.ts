@@ -15,6 +15,7 @@ export class HomeComponent {
   clothes: Cloth[] = [];
   MySearchTerm: string = '';
   quantityToCatr: number = 0;
+  activeTag = 'all';
 
   constructor(private service: ClothesServiceService,
     private route: ActivatedRoute, private server: ServerService) { }
@@ -24,7 +25,10 @@ export class HomeComponent {
   }
 
   getAllItems() {
-    this.server.getAllItems().subscribe(d => this.clothes = d)
+    this.server.getAllItems().subscribe(d =>{
+      this.activeTag = 'all';
+       this.clothes = d
+      })
   }
 
   search() {
@@ -46,6 +50,7 @@ export class HomeComponent {
     this.server.getAllItems().pipe(
       map(item => item.filter(i => {
         if (i.tag === tag) {
+          this.activeTag = tag;
           return i;
         }
       }))

@@ -5,7 +5,7 @@
                 <label [ngClass]="{'error' : !addingCloth.form.value.tag}">Tag</label>
                 <select class="text_input" id="tag" ngModel name="tag" required #tag="ngModel">
                     <option value="shoes">Shoes</option>
-                    <option value="pant">Pant</option>
+                    <option value="jeans">Jeans</option>
                     <option value="t-shirt">T-shirt</option>
                     <option value="jumper">Jumper</option>
                     <option value="dress">Dress</option>
@@ -30,15 +30,15 @@
             <div>
                 <label [ngClass]="{'error' : !addingCloth.form.value.imageNumber}">Image number</label>
                 <select class="number_input" name="imageNumber" required [(ngModel)]="imageNumber">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
+                    <option value="t-shirt.1">t-shirt.1</option>
+                    <option value="t-shirt.2">t-shirt.2</option>
+                    <option value="t-shirt.3">t-shirt.3</option>
+                    <option value="shoes.1">shoes.1</option>
+                    <option value="shoes.2">shoes.2</option>
+                    <option value="jeans.1">jeans.1</option>
+                    <option value="jeans.2">jeans.2</option>
+                    <option value="jumper.1">jumper.1</option>
+                    <option value="jumper.2">jumper.2</option>
                 </select>
             </div>
             <button [ngClass]="{'disable' : !addingCloth.valid}" (click)="onFormSubmit(addingCloth)">SUBMIT</button>

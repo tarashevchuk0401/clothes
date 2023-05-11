@@ -37,7 +37,7 @@ export class AddingClothesComponent implements OnInit {
       price: addingCloth.value.price,
       inCart: false,
       quantityInCart: 0,
-      imageNumber: +this.imageNumber,
+      imageNumber: this.imageNumber,
     }
 
     if (addingCloth.form.status === 'VALID') {

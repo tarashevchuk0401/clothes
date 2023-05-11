@@ -78,9 +78,10 @@ button {
     background-color: $pomegranate-500;
     border-radius: .8rem;
     font-size: 2rem;
-    padding: .5rem;
+    padding: .3rem;
     border: none;
     margin: .8rem;
+    margin-left: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,8 +95,8 @@ button {
 
 .active_link{
     background-color: $pomegranate-700;
-    outline: #272727 solid 4px;
-    outline-offset: 5px;
+    outline: #272727 solid 2px;
+    outline-offset: 3px;
 
 
 }
