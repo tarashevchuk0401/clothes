@@ -64,6 +64,13 @@ img {
     width: 2rem;
 }
 
+.in_cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
 @media (max-width: 600px){
     img{
         width: 7rem;

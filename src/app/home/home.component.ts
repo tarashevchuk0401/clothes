@@ -5,6 +5,7 @@ import { Observable, Subject, filter, interval, map, of, takeUntil, toArray } fr
 import { ServerService } from '../services/server.service';
 import { UnsubscribingService } from '../services/unsubscribing.service';
 import { AuthService } from '../services/auth.service';
+import { SubjectService } from '../services/subject.service';
 
 @Component({
   selector: 'app-home',
@@ -18,20 +19,30 @@ export class HomeComponent extends UnsubscribingService implements OnInit {
   quantityToCatr: number = 0;
   activeTag = 'all';
 
+  test: Cloth[] = [];
+  res : number = 0;
+
   constructor(
-    private route: ActivatedRoute, private server: ServerService) {
+    private route: ActivatedRoute, private server: ServerService, private subjectService: SubjectService) {
     super()
   }
 
   ngOnInit() {
     this.getAllItems();
+
+    this.subjectService.behaviorSubject.next(this.clothes.length);
+
   }
 
   getAllItems() {
     this.server.getAllItems().pipe(takeUntil(this.unsubscribe$)).subscribe(d => {
       this.activeTag = 'all';
-      this.clothes = d
+      this.clothes = d;
+      let quantityInCart = this.clothes.filter(item => item.quantityInCart !== 0);
+
+      this.subjectService.behaviorSubject.next(quantityInCart.length);
     })
+
   }
 
   search() {
@@ -65,7 +76,8 @@ export class HomeComponent extends UnsubscribingService implements OnInit {
   addToCart(id: string, newQuantity: string) {
     this.server.changeQuantityInCart(id, +newQuantity).pipe(
       takeUntil(this.unsubscribe$)
-    ).subscribe(d => console.log(d))
+    ).subscribe(d => this.getAllItems())
+
   }
 
 }

@@ -14,6 +14,7 @@ import { CartComponent } from './cart/cart.component';
 import { ResolverService } from './services/resolver.service';
 import { AddingClothesComponent } from './adding-clothes/adding-clothes.component';
 import { FooterComponent } from './footer/footer.component';
+import { SubjectService } from './services/subject.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     
   ],
-  providers: [AuthService, ResolverService],
+  providers: [AuthService, ResolverService, SubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

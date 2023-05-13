@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Cloth } from '../shared/models/Cloth';
 import { SubjectService } from '../services/subject.service';
 import { ActivatedRoute } from '@angular/router';
@@ -16,13 +16,19 @@ export class CartComponent extends UnsubscribingService implements OnInit {
   clothesInCart: Cloth[] = [];
   totalPrice: number = 0;
 
-  constructor(private server: ServerService) {
+  constructor(private server: ServerService, private subjectService: SubjectService) {
     super()
   }
 
   ngOnInit(): void {
     this.getAllInCart();
+
+    // this.subjectService.send(this.clothesInCart.length);
+    // console.log(this.clothesInCart.length)
+
   }
+
+ 
 
   getAllInCart() {
     this.server.getAllItems().pipe(
@@ -35,7 +41,7 @@ export class CartComponent extends UnsubscribingService implements OnInit {
     ).subscribe(d => {
       this.clothesInCart = d;
       this.calculateTotalPrice();
-      console.log(this.totalPrice)
+      this.subjectService.send(this.clothesInCart.length);
 
     })
   }

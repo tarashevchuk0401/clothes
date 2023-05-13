@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs'
+import { BehaviorSubject, Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +7,13 @@ import {Subject} from 'rxjs'
 export class SubjectService {
 
   sub = new Subject();
+  behaviorSubject = new BehaviorSubject(0)
 
   constructor() { }
 
-  send(data:any){
-  return  this.sub.next(data);
+  send(pcs: number) {
+    this.behaviorSubject.next(pcs);
   }
+
+
 }

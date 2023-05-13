@@ -21,6 +21,16 @@ nav{
     justify-content: flex-end;
 }
 
+.pcs_in_cart{
+    font-size: 1rem;
+    color: $color_black;
+    font-weight: 800;
+    padding: .2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+}
+
 
 @media (max-width: 600px){
     .container{

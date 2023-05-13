@@ -1,9 +1,12 @@
 <div class="container">
     <button routerLink="home" routerLinkActive="active_link" class="logo">Clothes </button>
+
+    
     <nav>
-        <button routerLink="cart" routerLinkActive="active_link">
+        <button  routerLink="cart" routerLinkActive="active_link">
             <img src="assets/icons/cart.png" alt="">
             Cart
+            <div class="pcs_in_cart">{{itemsInCart}}</div>
         </button>
         <button routerLink="login" routerLinkActive="active_link" (click)="logout()">
             <img src="assets/icons/logout.png" alt="">

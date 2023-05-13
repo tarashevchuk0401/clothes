@@ -12,42 +12,50 @@
     <div class="sidebar">
         <button [ngClass]="{'active_link' : activeTag === 'all'}" class="button_tag" (click)="getAllItems()">
             <img class="icon" src="assets/icons/infinity.png" alt="">
-         </button>
+        </button>
         <button [ngClass]="{'active_link' : activeTag === 'shoes'}" class="button_tag" (click)="searchByTag('shoes')">
             <img class="icon " src="assets/icons/shoes.png" alt="">
-         </button>
+        </button>
         <button [ngClass]="{'active_link' : activeTag === 'jeans'}" class="button_tag" (click)="searchByTag('jeans')">
             <img class="icon" src="assets/icons/jeans.png" alt="">
-         </button>
-        <button [ngClass]="{'active_link' : activeTag === 't-shirt'}" class="button_tag" (click)="searchByTag('t-shirt')">
+        </button>
+        <button [ngClass]="{'active_link' : activeTag === 't-shirt'}" class="button_tag"
+            (click)="searchByTag('t-shirt')">
             <img class="icon" src="assets/icons/t-shirt.png" alt="">
-         </button>
+        </button>
         <button [ngClass]="{'active_link' : activeTag === 'jumper'}" class="button_tag" (click)="searchByTag('jumper')">
             <img class="icon" src="assets/icons/jumper.png" alt="">
-         </button>
+        </button>
     </div>
-        <ul>
-            <li *ngFor="let cloth of clothes">
-                <a routerLink="/page/{{cloth.id}}">
-                    <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+    <ul>
+        <li *ngFor="let cloth of clothes">
+            <a routerLink="/page/{{cloth.id}}">
+                <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+            </a>
+            <div class="content">
+                <a routerLink="/page/{{cloth.id}}" class="name">
+                    {{cloth.name}}
                 </a>
-                <div class="content">
-                    <a routerLink="/page/{{cloth.id}}" class="name">
-                        {{cloth.name}}
-                    </a>
-                    <div class="description">
-                        {{cloth.description}}
-                    </div>
-                    <div class="price">
-                        {{cloth.price | currency}}
-                    </div>
-                    <div class="input_add">
-                        <input min="0" oninput="validity.valid||(value='')" class="quantity" type="number" #newQuantity value="1">
-                        <button class="add_to_cart button_tag" (click)="addToCart(cloth.id, newQuantity.value)">
-                            Add <img  class="icon" src="assets/icons/cart.png" alt="">
-                        </button> 
-                    </div>
+                <div class="description">
+                    {{cloth.description}}
                 </div>
-            </li>
-        </ul>
+                <div class="price">
+                    {{cloth.price | currency}}
+                </div>
+                <div class="input_add">
+                    <div>
+                        <input min="0" oninput="validity.valid||(value='')" class="quantity" type="number" #newQuantity id="newQuantity"
+                            value="{{cloth.quantityInCart}}">
+                        <div class="in_cart">
+                            <img width="5px" class="icon" src="assets/icons/cart.png" alt="">
+                            <div class="pcs_inCart"> x {{cloth.quantityInCart}} </div>
+                        </div>
+                    </div>
+                    <button class="add_to_cart button_tag" (click)="addToCart(cloth.id, newQuantity.value)">
+                        Add <img class="icon" src="assets/icons/cart.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>

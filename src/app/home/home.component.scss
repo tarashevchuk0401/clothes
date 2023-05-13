@@ -1,5 +1,6 @@
 @import '/src/styles.scss';
 
+
 img {
     width: 250px;
     margin: .2rem;
@@ -52,6 +53,7 @@ img {
 
 .button_tag {
     width: 4rem;
+
 }
 
 .name {
@@ -123,6 +125,13 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
+}
+
+.in_cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 

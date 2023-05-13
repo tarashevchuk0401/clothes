@@ -13,11 +13,11 @@
             </div>
             <div>
                 <label [ngClass]="{'error' : !addingCloth.form.value.name}">Name</label>
-                <input class="text_input" type="text" ngModel name="name" required #name="ngModel">
+                <input class="text_input" type="text" ngModel name="name" required #name="ngModel" maxlength="30">
             </div>
             <div>
                 <label [ngClass]="{'error' : !addingCloth.form.value.description}">Description</label>
-                <textarea class="text_input" name="description" id="description" cols="30" rows="5" required
+                <textarea class="text_input" name="description" id="description" cols="30" rows="5" required maxlength="240"
                     [(ngModel)]="description"></textarea>
             </div>
         </div>
