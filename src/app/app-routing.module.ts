@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [guard] },
   { path: 'cart', component: CartComponent, canActivate: [guard], resolve: { allClothes: ResolverService } },
   { path: 'page/:id', component: PageComponent, canActivate: [guard] },
+  { path: '**', component: LoginComponent },
+
 ];
 
 @NgModule({

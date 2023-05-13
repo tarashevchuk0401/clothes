@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { ClothesServiceService } from '../services/clothes-service.service';
 import { Cloth } from '../shared/models/Cloth';
 import { SubjectService } from '../services/subject.service';
 import { ActivatedRoute } from '@angular/router';
 import { ServerService } from '../services/server.service';
-import { map } from 'rxjs';
+import { map, takeUntil } from 'rxjs';
+import { UnsubscribingService } from '../services/unsubscribing.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent extends UnsubscribingService implements OnInit {
 
   clothesInCart: Cloth[] = [];
   totalPrice: number = 0;
 
   constructor(private server: ServerService) {
+    super()
   }
 
   ngOnInit(): void {
     this.getAllInCart();
-
-    console.log(this.clothesInCart)
   }
 
   getAllInCart() {
     this.server.getAllItems().pipe(
+      (takeUntil(this.unsubscribe$)),
       map(item => item.filter(i => {
         if (i.quantityInCart > 0) {
           return i;
@@ -47,8 +47,7 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(id: string) {
-    this.server.changeQuantityInCart(id, 0).subscribe(d => this.getAllInCart());
-
+    this.server.changeQuantityInCart(id, 0).pipe(takeUntil(this.unsubscribe$)).subscribe(d => this.getAllInCart());
   }
 
 }

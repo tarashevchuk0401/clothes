@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  isLogedIn: boolean = true;
+  
 
   constructor() { }
 
   logIn(){
-    this.isLogedIn = true;
+    sessionStorage.setItem('isAuthenticated', 'true');
   }
 
   logOut(){
-    this.isLogedIn = false;
+    sessionStorage.setItem('isAuthenticated', '');
   }
 
 

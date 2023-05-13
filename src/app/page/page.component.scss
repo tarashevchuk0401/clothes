@@ -1,3 +1,5 @@
+@import '/src/styles.scss';
+
 main {
     margin: 2rem;
 }
@@ -5,7 +7,7 @@ main {
 .container {
     display: flex;
     flex-direction: row;
-    outline: #f55414 solid 4px;
+    outline: $color_orange solid 4px;
     outline-offset: 10px;
     border-radius: 1rem;
     padding: 1rem;
@@ -40,7 +42,7 @@ img {
 
 .price {
     font-size: 3rem;
-    color: #f55414;
+    color: $color_orange;
 }
 
 .input_add {
@@ -54,12 +56,9 @@ img {
     font-size: 1.2rem;
     width: 4rem;
     height: 2rem;
-    border: 3px solid black;
+    border: 3px solid $color_black;
 }
 
-.add_to_cart {}
-
-.button_tag {}
 
 .icon {
     width: 2rem;
@@ -94,7 +93,5 @@ img {
 
     .icon{
         width: 1rem;
-    }
-
-    
+    }    
 }

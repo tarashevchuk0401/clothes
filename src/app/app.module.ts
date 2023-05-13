@@ -13,6 +13,7 @@ import { AuthService } from './services/auth.service';
 import { CartComponent } from './cart/cart.component';
 import { ResolverService } from './services/resolver.service';
 import { AddingClothesComponent } from './adding-clothes/adding-clothes.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddingClothesComponent } from './adding-clothes/adding-clothes.componen
     PageComponent,
     LoginComponent,
     CartComponent,
-    AddingClothesComponent
+    AddingClothesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,4 @@
-
-$color_A1 : #f55414;
-$color_B1 : #171717;
-$color_B2 : #5f5f5f;
-$color_C1 : #d6d4d4;
-
-$pomegranate-50: #fff5ed;
-$pomegranate-200: #fdcdab;
-$pomegranate-300: #fba976;
-$pomegranate-100: #fee8d6;
-$pomegranate-400: #f87b3f;
-$pomegranate-500: #f55414;
-$pomegranate-600: #e63e10;
-$pomegranate-700: #bf2c0f;
-$pomegranate-800: #982414;
-$pomegranate-900: #7a2114;
-$pomegranate-950: #420e08;
-
+@import '/src/styles.scss';
 
 img {
     width: 10rem;
@@ -61,7 +44,7 @@ li {
 }
 
 .price {
-    color: $color_A1;
+    color: $color_orange;
 }
 
 .button {
@@ -86,7 +69,7 @@ li {
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
-    outline: $color_A1 solid 4px;
+    outline: $color_orange solid 4px;
     outline-offset: 5px;
     border-radius: 1rem;
     margin-top: 1.7rem;
@@ -111,7 +94,7 @@ h3 {
 }
 
 .calculation_price {
-    color: $pomegranate-500;
+    color: $color_orange;
     font-weight: 800;
 }
 
@@ -119,7 +102,7 @@ h3 {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    color: $pomegranate-600;
+    color: $color_orange;
 }
 
 @media (max-width: 700px) {

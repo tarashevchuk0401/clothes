@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServerService } from '../services/server.service';
 import { Cloth } from '../shared/models/Cloth';
+import { UnsubscribingService } from '../services/unsubscribing.service';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-adding-clothes',
   templateUrl: './adding-clothes.component.html',
   styleUrls: ['./adding-clothes.component.scss']
 })
-export class AddingClothesComponent implements OnInit {
+export class AddingClothesComponent extends UnsubscribingService implements OnInit {
 
   clothes: Cloth[] = [];
   description: string = '';
@@ -16,14 +18,16 @@ export class AddingClothesComponent implements OnInit {
   formValidation: boolean = false;
   showError: boolean = false;
 
-  constructor(private server: ServerService) { }
+  constructor(private server: ServerService) {
+    super()
+   }
 
   ngOnInit(): void {
     this.getAllItems();
   }
 
   getAllItems() {
-    this.server.getAllItems().subscribe(d => {
+    this.server.getAllItems().pipe(takeUntil(this.unsubscribe$)).subscribe(d => {
       this.clothes = d;
     });
 
@@ -41,7 +45,7 @@ export class AddingClothesComponent implements OnInit {
     }
 
     if (addingCloth.form.status === 'VALID') {
-      this.server.addItem(newItem).subscribe(data => {
+      this.server.addItem(newItem).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
         this.getAllItems();
         addingCloth.reset();
       });
@@ -51,6 +55,6 @@ export class AddingClothesComponent implements OnInit {
   }
 
   deleteItem(id: string) {
-    this.server.deleteItem(id).subscribe(d => this.getAllItems())
+    this.server.deleteItem(id).pipe(takeUntil(this.unsubscribe$)).subscribe(d => this.getAllItems())
   }
 }

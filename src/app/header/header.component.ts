@@ -6,11 +6,12 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent  {
+export class HeaderComponent {
 
-  constructor(private auth: AuthService){}
+  constructor(private auth: AuthService) { }
 
-  logout(){
+  logout() {
+    sessionStorage.setItem('isAuthenticated', 'false')
     this.auth.logOut();
   }
 }  

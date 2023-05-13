@@ -12,7 +12,9 @@ header {
 
 .container_app {
     width: 93%;
+    min-height: 100vh;
 }
+
 
 @media (max-width: 600px) {
     .container_app {
