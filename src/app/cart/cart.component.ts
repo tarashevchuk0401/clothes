@@ -22,10 +22,6 @@ export class CartComponent extends UnsubscribingService implements OnInit {
 
   ngOnInit(): void {
     this.getAllInCart();
-
-    // this.subjectService.send(this.clothesInCart.length);
-    // console.log(this.clothesInCart.length)
-
   }
 
  
