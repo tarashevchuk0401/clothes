@@ -77,6 +77,13 @@ img {
     color: $color_orange;
 }
 
+#search_input {
+    height: 2.4rem;
+    padding: .2rem;
+    font-size: 1rem;
+    width: 28%;
+}
+
 .input_add {
     display: flex;
     flex-direction: row;
@@ -163,9 +170,11 @@ ul {
 
     }
 
-    input {
-        height: 2rem;
-        padding: .5rem;
+    #search_input {
+        height: 2.2rem;
+        padding: .2rem;
+        font-size: 1rem;
+        width: 40%;
     }
 
     .button_search {

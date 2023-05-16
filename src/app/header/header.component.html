@@ -1,18 +1,26 @@
-<div class="container">
-    <button routerLink="home" routerLinkActive="active_link" class="logo">LIFESTYLE </button>  
+<div class="container" [ngClass]="{'margin-bottom' : isMenuOpened === true}">
+    <button routerLink="home" routerLinkActive="active_link" class="logo">LIFESTYLE </button>
     <nav>
-        <button  routerLink="cart" routerLinkActive="active_link">
-            <img src="assets/icons/cart.png" alt="">
-            Cart
-            <div class="pcs_in_cart">{{itemsInCart}}</div>
-        </button>
-        <button routerLink="login" routerLinkActive="active_link" (click)="logout()">
-            <img src="assets/icons/logout.png" alt="">
-            Log Out
-        </button>
-        <button routerLink="/adding-clothes" routerLinkActive="active_link">
-            <img src="assets/icons/add.png" alt="">
-            Add new item
-        </button>
+        <div class="menu">
+            <button class="toggleMenu" (click)="toggleMenu()">
+                <img *ngIf="!isMenuOpened" src="assets/icons/menu.png" alt="">
+                <img *ngIf="isMenuOpened" src="assets/icons/close.png" alt="">
+            </button>
+            <div class="menu_items" [ngClass]="{'menu-mobile' : isMenuOpened === true}">
+                <button routerLink="cart" routerLinkActive="active_link">
+                    <img src="assets/icons/cart.png" alt="">
+                    Cart
+                    <div class="pcs_in_cart">{{itemsInCart}}</div>
+                </button>
+                <button routerLink="login" routerLinkActive="active_link" (click)="logout()">
+                    <img src="assets/icons/logout.png" alt="">
+                    Log Out
+                </button>
+                <button routerLink="/adding-clothes" routerLinkActive="active_link">
+                    <img src="assets/icons/add.png" alt="">
+                    Add new item
+                </button>
+            </div>
+        </div>
     </nav>
 </div>

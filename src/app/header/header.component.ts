@@ -11,6 +11,7 @@ import { SubjectService } from '../services/subject.service';
 export class HeaderComponent  implements OnInit {
 
   itemsInCart: number = 0;
+  isMenuOpened: boolean = false;
 
   constructor(private auth: AuthService, private subjectService: SubjectService) { }
 
@@ -21,5 +22,9 @@ export class HeaderComponent  implements OnInit {
   logout() {
     sessionStorage.setItem('isAuthenticated', 'false')
     this.auth.logOut();
+  }
+
+  toggleMenu(){
+    this.isMenuOpened = !this.isMenuOpened
   }
 }  
