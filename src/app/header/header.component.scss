@@ -9,6 +9,8 @@
     justify-content: space-between;
     width: 100%;
     border-bottom: 5px solid $color_black;
+    background-color: rgba($color: #ffffff, $alpha: 0.7);
+    backdrop-filter: blur(5px);    
 }
 
 img {
@@ -58,6 +60,10 @@ nav {
     .container {
         font-size: 1.5rem;
         position: relative;
+    }
+
+    img{
+        width: 40px;
     }
 
     .toggleMenu {

@@ -55,7 +55,7 @@ li {
         outline: $color_orange solid 4px;
         outline-offset: 10px;
         border-radius: 1rem;
-        transform: translateY(-5px);
+        transform: transjlateY(-5px);
     }
 }
 
@@ -100,7 +100,7 @@ button {
 
 @media (max-width: 600px) {
     button {
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: .2rem;
         margin: .2rem;
         border-radius: .4rem;

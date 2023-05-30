@@ -13,10 +13,10 @@ export class HeaderComponent  implements OnInit {
   itemsInCart: number = 0;
   isMenuOpened: boolean = false;
 
-  constructor(private auth: AuthService, private subjectService: SubjectService) { }
+  constructor(public subjectService: SubjectService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.subjectService.behaviorSubject.subscribe(data => this.itemsInCart = data)
+    // this.subjectService.behaviorSubject.subscribe(data => this.itemsInCart = data)
   }
 
   logout() {
