@@ -1,7 +1,7 @@
 <form [formGroup]="logInForm" (ngSubmit)="submit()" class="search_pannel">
     <div class="login_container">
-        <input class="input_login" type="text" formControlName="name" placeholder="Login : admin" >
-        <input class="input_login" type="text" formControlName="password" placeholder="Password : 1234" >
+        <input class="input_login" type="text" formControlName="name" placeholder="Login : admin" maxlength="25">
+        <input class="input_login" type="text" formControlName="password" placeholder="Password : 1234" maxlength="10" >
         <button id="login_button" class="input_login" (click)="submit()">Submit</button>
     </div>
 </form>
