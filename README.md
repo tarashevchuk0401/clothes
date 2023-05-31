@@ -19,6 +19,12 @@
                 <br>
                 Also i used routing, guarders for protect the data and local storage for match
                 if user is authorized or not.
+              <br>
+            <br>
+            <br>
+            <h4>To log in please use </h4>
+            <div>login: <b>admin</b></div>
+            <div>password: <b>1234</b></div>
             </p>
         </div>
     </section>
