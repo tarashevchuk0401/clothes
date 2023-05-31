@@ -8,17 +8,17 @@
             <p>
                 Online shop with clothes. Written in Angular and deployed in Firebase.
                 User can log in as a administrator and see all available items in shop. Also , it's possible to
-                add new items using Angular Forms. If neseccary you can delete it or add to the cart if you would like
+                add new items using Angular Forms. If necessary you can delete it or add to the cart if you would like
                 to buy something.
                 In left side of home page user can filter clothes by tags(t-shirts, jeans, shoes ...).
-                Search pannel is available so you can write some key word to find something.
-                Appliction is responsive so you can use it also on your phone or tablet
+                Search panel is available so you can write some key word to find something.
+                Application is responsive so you can use it also on your phone or tablet
                 <br>
                 <br>
                 I've been used RxJS library for getting and creating data from data base.
                 <br>
                 Also i used routing, guarders for protect the data and local storage for match
-                if user is authorised or not.
+                if user is authorized or not.
             </p>
         </div>
     </section>
