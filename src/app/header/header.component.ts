@@ -16,7 +16,6 @@ export class HeaderComponent  implements OnInit {
   constructor(public subjectService: SubjectService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    // this.subjectService.behaviorSubject.subscribe(data => this.itemsInCart = data)
   }
 
   logout() {
