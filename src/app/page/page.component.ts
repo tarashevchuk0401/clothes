@@ -1,31 +1,34 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ClothesServiceService } from '../services/clothes-service.service';
+import { Component, OnInit } from '@angular/core';
 import { Cloth } from '../shared/models/Cloth';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, filter, map, takeUntil, tap } from 'rxjs';
+import { ServerService } from '../services/server.service';
+import { UnsubscribingService } from '../services/unsubscribing.service';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.css']
+  styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit, OnDestroy {
+export class PageComponent extends UnsubscribingService implements OnInit {
 
-  clothes: Cloth[] = [];
-  destroyed$ = new Subject<void>();
+  currentId: string = this.route.snapshot.params['id']
+  currentItem: Cloth[] = [];
 
-  constructor(private service: ClothesServiceService, private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.route.params.pipe(takeUntil(this.destroyed$)).subscribe((params) => {
-      if (params['id'])
-        this.clothes = this.service.getById(params['id']);
-    })
+  constructor(private server: ServerService, private route: ActivatedRoute) { 
+    super()
   }
 
-  ngOnDestroy(): void {
-    this.destroyed$.next();
-    this.destroyed$.complete();
+  ngOnInit(): void {
+    this.server.getAllItems().pipe(
+      (takeUntil(this.unsubscribe$)),
+      map(item => item.filter(i => i.id == this.currentId))
+    ).subscribe(data => this.currentItem = data)
+  }
+
+  
+  addToCart(id: string, newQuantity: string){
+    this.server.changeQuantityInCart(id, +newQuantity).pipe(takeUntil(this.unsubscribe$)).subscribe( d => console.log(d))
   }
 
 }

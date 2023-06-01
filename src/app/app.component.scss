@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.container_app {
+    width: 93%;
+    min-height: 100vh;
+    margin-top: 5rem;
+}
+
+
+@media (max-width: 600px) {
+    .container_app {
+        width: 99%;
+        margin-top: 2rem;
+    }
+
+    header{
+        position: relative;
+    }
+}

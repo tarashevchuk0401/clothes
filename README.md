@@ -1,27 +1,69 @@
-# Clothes
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h1>Hi there!
+    <img src="https://img.icons8.com/?size=512&id=1H52efUsDX7A&format=png" width=25px alt="angular">
+</h1>
+<p>I'm a JavaScript frontend
+    <img src="https://img.icons8.com/?size=512&id=71257&format=png" width=25px alt="angular">
+    developer and currently I'm looking for a job.
+</p>
+<h2>Technologies</h2>
+<section>
+    <div>
+        <img src="https://img.icons8.com/?size=512&id=108784&format=png" width=25px alt="angular">
+        <span>Javascript</span>
+    </div>
+    <div>
+        <img src="https://img.icons8.com/?size=512&id=71257&format=png" width=25px alt="angular">
+        <span>Angular</span>
+    </div>
+    <div>
+        <img src="https://img.icons8.com/?size=512&id=wpZmKzk11AzJ&format=png" width=25px alt="angular">
+        <span>TypeScript</span>
+    </div>
+    <div>
+        <img src="https://img.icons8.com/?size=512&id=20906&format=png" width=25px alt="angular">
+        <span>GIT</span>
+    </div>
+    <div>
+        <img src="https://seeklogo.com/images/R/rxjs-logo-1C13E67498-seeklogo.com.png" width=25px alt="angular">
+        <span>RxJS</span>
+    </div>
+    <div>
+        <img src="https://material.angular.io/assets/img/angular-material-logo.svg" width=25px alt="angular">
+        <span>Angular Materials</span>
+    </div>
+    <div>
+        <img src="https://img.icons8.com/?size=512&id=QBqFNfPPB2Kx&format=png" width=25px alt="angular">
+        <span>Sass </span>
+    </div>
+</section>
+<div>
+    <h2> MY PET-PROJECTS</h2>
+    <section>
+        <h3>LIFESTYLE</h3>
+        <h4>Online shop with clothes</h4>
+        <div>
+            <img src="https://img.icons8.com/?size=512&id=1349&format=png" width=25px alt="">
+            <span>https://clothes-805bc.web.app</span>
+            <br>
+            <img src="https://img.icons8.com/?size=512&id=20906&format=png" width=25px alt="">
+            <span>https://github.com/tarashevchuk0401/clothes</span>
+            <br>
+            <br>
+            <br>
+            <h4>To log in please use </h4>
+            <div>login: <b>admin</b></div>
+            <div>password: <b>1234</b></div>
+        </div>
+    </section>
+    <section>
+        <h3>ToDoList</h3>
+        <h4>To do list</h4>
+        <div>
+            <img src="https://img.icons8.com/?size=512&id=1349&format=png" width=25px alt="">
+            <span>https://newtodofirebase.web.app</span>
+            <br>
+            <img src="https://img.icons8.com/?size=512&id=20906&format=png" width=25px alt="">
+            <span>https://github.com/tarashevchuk0401/toDoFirebase</span>
+        </div>
+    </section>
+</div>

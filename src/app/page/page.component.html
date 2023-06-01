@@ -1,24 +1,28 @@
-
-
-<div class="wrapper">
-    <ul>
-        <li *ngFor="let cloth of clothes" class="cart">
-            <app-tags></app-tags>
-            <a routerLink="/page/{{cloth.id}}">
-                <img src="{{cloth.imageUrl}}" alt="clothes">
-                <div class="content">
-                    <div class="name">
-                        {{cloth.name}}
-                    </div>
-                    <div class="description">
-                        {{cloth.description}}
-                    </div>
-                    <div class="price">
-                        {{cloth.price | currency}}
-                    </div>
-
+<main>
+    <div class="wrapper" *ngFor="let cloth of currentItem" class="cart">
+        <div class="container">
+            <img *ngIf="cloth.imageNumber" src="assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+            <div class="content">
+                <div class="name">
+                    {{cloth.name}}
                 </div>
-            </a>
-        </li>
-    </ul>
-</div>
+                <div class="description">
+                    {{cloth.description}}
+                </div>
+                <div class="price">
+                    {{cloth.price | currency}}
+                </div>
+                <div class="in_cart">
+                    <img width="5px" class="icon" src="assets/icons/cart.png" alt="">
+                    <div class="pcs_inCart"> x {{cloth.quantityInCart}} </div>
+                </div>
+                <div class="input_add">
+                    <input min="0" oninput="validity.valid||(value='')" class="quantity" type="number" #newQuantity value="1">
+                    <button class="add_to_cart button_tag" (click)="addToCart(cloth.id, newQuantity.value)">
+                        Add <img class="icon" src="assets/icons/cart.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

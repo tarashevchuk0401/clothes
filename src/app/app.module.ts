@@ -6,34 +6,36 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TagsComponent } from './tags/tags.component';
 import { PageComponent } from './page/page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { CartComponent } from './cart/cart.component';
 import { ResolverService } from './services/resolver.service';
+import { AddingClothesComponent } from './adding-clothes/adding-clothes.component';
+import { FooterComponent } from './footer/footer.component';
+import { SubjectService } from './services/subject.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchComponent,
-    TagsComponent,
     PageComponent,
-    LoginComponent, 
-    CartComponent
+    LoginComponent,
+    CartComponent,
+    AddingClothesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [AuthService , ResolverService],
+  providers: [AuthService, ResolverService, SubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

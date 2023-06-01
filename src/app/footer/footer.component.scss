@@ -1,0 +1,42 @@
+@import '/src/styles.scss';
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: $color_orange;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+}
+
+.footer_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    color: $color_black;
+    font-weight: 700;
+    margin: .5rem;
+}
+
+.footer_info{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 1rem;
+    color: $color_dark_grey;
+    font-style: italic;
+}
+
+@media (max-width: 600px){
+    section {
+        font-size: .7rem;
+    }
+
+    .footer_links{
+        justify-content: space-between;
+    }
+}
+
