@@ -1,3 +1,16 @@
+form{
+    display: flex;
+    justify-content: center;
+}
+
+.login_container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+}
+
 
 @media (max-width: 600px) {
     #login_button {

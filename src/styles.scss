@@ -94,8 +94,10 @@ button {
     background-color: $color_dark_orange;
     outline: $color_black solid 2px;
     outline-offset: 3px;
+}
 
-
+input{
+    margin-top: 1rem;
 }
 
 @media (max-width: 600px) {
