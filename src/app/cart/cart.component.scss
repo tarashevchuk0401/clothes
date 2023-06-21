@@ -10,6 +10,8 @@ main {
     flex-direction: row;
     justify-content: space-between;
     flex-grow: 0;
+    animation-name: container;
+    animation-duration: 500ms;
 }
 
 
@@ -143,3 +145,4 @@ h3 {
     }
 
 }
+

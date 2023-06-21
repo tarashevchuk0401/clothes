@@ -1,6 +1,11 @@
 @import '/src/styles.scss';
 
 
+main{
+    animation-name: container;
+    animation-duration: 500ms;
+}
+
 img {
     width: 250px;
     margin: .2rem;
@@ -13,7 +18,7 @@ img {
 .search_pannel {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     margin-top: .5rem;
     margin-bottom: .5rem;
 }

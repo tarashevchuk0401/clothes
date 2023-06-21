@@ -17,6 +17,23 @@ header {
     width: 93%;
     min-height: 100vh;
     margin-top: 5rem;
+    animation-name: container;
+    animation-duration: 2s;
+}
+
+footer{
+    animation-name: container;
+    animation-duration: 2s;
+}
+
+@keyframes container {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 

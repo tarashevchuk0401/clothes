@@ -1,6 +1,8 @@
 form{
     display: flex;
     justify-content: center;
+    animation-name: container;
+    animation-duration: 500ms;
 }
 
 .login_container{

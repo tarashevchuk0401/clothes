@@ -1,80 +1,82 @@
-<main>
-    <form #addingCloth="ngForm">
-        <div class="left_form container">
-            <div>
-                <label [ngClass]="{'error' : !addingCloth.form.value.tag}">Tag</label>
-                <select class="text_input" id="tag" ngModel name="tag" required #tag="ngModel">
-                    <option value="shoes">Shoes</option>
-                    <option value="jeans">Jeans</option>
-                    <option value="t-shirt">T-shirt</option>
-                    <option value="jumper">Jumper</option>
-                    <option value="dress">Dress</option>
-                </select>
-            </div>
-            <div>
-                <label [ngClass]="{'error' : !addingCloth.form.value.name}">Name</label>
-                <input class="text_input" type="text" ngModel name="name" required #name="ngModel" maxlength="30">
-            </div>
-            <div>
-                <label [ngClass]="{'error' : !addingCloth.form.value.description}">Description</label>
-                <textarea class="text_input" name="description" id="description" cols="30" rows="5" required maxlength="240"
-                    [(ngModel)]="description"></textarea>
-            </div>
-        </div>
-        <div class="right_form container">
-            <div>
-                <label [ngClass]="{'error' : !addingCloth.form.value.price}">Price</label>
-                <input min="0" oninput="validity.valid||(value='')" class="number_input" type="number" ngModel
-                    name="price" required #price="ngModel">
-            </div>
-            <div>
-                <label [ngClass]="{'error' : !addingCloth.form.value.imageNumber}">Image number</label>
-                <select class="number_input" name="imageNumber" required [(ngModel)]="imageNumber">
-                    <option value="t-shirt.1">t-shirt.1</option>
-                    <option value="t-shirt.2">t-shirt.2</option>
-                    <option value="t-shirt.3">t-shirt.3</option>
-                    <option value="shoes.1">shoes.1</option>
-                    <option value="shoes.2">shoes.2</option>
-                    <option value="jeans.1">jeans.1</option>
-                    <option value="jeans.2">jeans.2</option>
-                    <option value="jumper.1">jumper.1</option>
-                    <option value="jumper.2">jumper.2</option>
-                </select>
-            </div>
-            <button [ngClass]="{'disable' : !addingCloth.valid}" (click)="onFormSubmit(addingCloth)">SUBMIT</button>
-        </div>
-    </form>
-</main>
-
-
-<div class="wrapper">
-    <ul>
-        <li *ngFor="let cloth of clothes">
-
-            <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
-            <div class="content">
-
-                <div class="name">
-                    {{cloth.name}}
+<div class="container_main">
+    <main>
+        <form #addingCloth="ngForm">
+            <div class="left_form container">
+                <div>
+                    <label [ngClass]="{'error' : !addingCloth.form.value.tag}">Tag</label>
+                    <select class="text_input" id="tag" ngModel name="tag" required #tag="ngModel">
+                        <option value="shoes">Shoes</option>
+                        <option value="jeans">Jeans</option>
+                        <option value="t-shirt">T-shirt</option>
+                        <option value="jumper">Jumper</option>
+                        <option value="dress">Dress</option>
+                    </select>
                 </div>
-                <div class="description">
-                    {{cloth.description}}
+                <div>
+                    <label [ngClass]="{'error' : !addingCloth.form.value.name}">Name</label>
+                    <input class="text_input" type="text" ngModel name="name" required #name="ngModel" maxlength="30">
                 </div>
-                <div class="footer">
-                    <div class="tag">
-                        {{cloth.tag}}
+                <div>
+                    <label [ngClass]="{'error' : !addingCloth.form.value.description}">Description</label>
+                    <textarea class="text_input" name="description" id="description" cols="30" rows="5" required maxlength="240"
+                        [(ngModel)]="description"></textarea>
+                </div>
+            </div>
+            <div class="right_form container">
+                <div>
+                    <label [ngClass]="{'error' : !addingCloth.form.value.price}">Price</label>
+                    <input min="0" oninput="validity.valid||(value='')" class="number_input" type="number" ngModel
+                        name="price" required #price="ngModel">
+                </div>
+                <div>
+                    <label [ngClass]="{'error' : !addingCloth.form.value.imageNumber}">Image number</label>
+                    <select class="number_input" name="imageNumber" required [(ngModel)]="imageNumber">
+                        <option value="t-shirt.1">t-shirt.1</option>
+                        <option value="t-shirt.2">t-shirt.2</option>
+                        <option value="t-shirt.3">t-shirt.3</option>
+                        <option value="shoes.1">shoes.1</option>
+                        <option value="shoes.2">shoes.2</option>
+                        <option value="jeans.1">jeans.1</option>
+                        <option value="jeans.2">jeans.2</option>
+                        <option value="jumper.1">jumper.1</option>
+                        <option value="jumper.2">jumper.2</option>
+                    </select>
+                </div>
+                <button [ngClass]="{'disable' : !addingCloth.valid}" (click)="onFormSubmit(addingCloth)">SUBMIT</button>
+            </div>
+        </form>
+    </main>
+    
+    
+    <div class="wrapper">
+        <ul>
+            <li *ngFor="let cloth of clothes">
+    
+                <img *ngIf="cloth.imageNumber" src="/assets/img/{{cloth.imageNumber}}.jpg" alt="clothes">
+                <div class="content">
+    
+                    <div class="name">
+                        {{cloth.name}}
                     </div>
-                    <div class="price">
-                        {{cloth.price | currency}}
+                    <div class="description">
+                        {{cloth.description}}
+                    </div>
+                    <div class="footer">
+                        <div class="tag">
+                            {{cloth.tag}}
+                        </div>
+                        <div class="price">
+                            {{cloth.price | currency}}
+                        </div>
+                    </div>
+                    <div class="id_remove">
+                        <div class="id">ID {{cloth.id}}</div>
+                        <button (click)="deleteItem(cloth.id)">
+                            <img class="icon" src="assets/icons/delete.png" alt="">
+                        </button>
                     </div>
                 </div>
-                <div class="id_remove">
-                    <div class="id">ID {{cloth.id}}</div>
-                    <button (click)="deleteItem(cloth.id)">
-                        <img class="icon" src="assets/icons/delete.png" alt="">
-                    </button>
-                </div>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </div>
