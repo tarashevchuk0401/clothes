@@ -10,7 +10,6 @@
                 <button routerLink="cart" routerLinkActive="active_link">
                     <img src="assets/icons/cart.png" alt="">
                     Cart
-                    <!-- <div class="pcs_in_cart">{{itemsInCart}}</div> -->
                     <div class="pcs_in_cart">{{subjectService.behaviorSubject | async}}</div>
                 </button>
                 <button routerLink="login" routerLinkActive="active_link" (click)="logout()">

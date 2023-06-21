@@ -70,6 +70,10 @@ li {
 
 }
 
+input{
+    margin-top: 1rem;
+}
+
 button {
     color: $color_black;
     background-color: $color_orange;
@@ -113,4 +117,15 @@ button {
     }
     
 
+}
+
+@keyframes container {
+    0% {
+        opacity: 0;
+        transform: translateX(3000px);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

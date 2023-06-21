@@ -6,7 +6,6 @@ import { BehaviorSubject, Subject } from 'rxjs'
 })
 export class SubjectService {
 
-  // sub = new Subject();
   behaviorSubject = new BehaviorSubject(0)
 
   constructor() { }
